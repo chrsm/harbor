@@ -1,0 +1,9 @@
+FROM pritunl/archlinux:latest
+LABEL maintainer="chrsm <c@chrsm.org>"
+
+RUN pacman -Syu --noconfirm deluge python2-gobject2 pygtk ttf-dejavu
+RUN useradd -m -g users c
+
+USER c
+
+CMD [ "/usr/bin/deluge" ]
