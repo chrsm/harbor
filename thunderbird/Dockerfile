@@ -1,9 +1,7 @@
-FROM pritunl/archlinux:latest
+FROM c/gui_base
 LABEL maintainer="chrsm <c@chrsm.org>"
 
-RUN pacman -Syu --noconfirm thunderbird
-
-RUN useradd -m -g users c
+RUN sudo pacman -Syu --noconfirm thunderbird
 
 USER c
 

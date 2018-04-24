@@ -1,9 +1,7 @@
-FROM pritunl/archlinux:latest
+FROM c/gui_base
 LABEL maintainer="chrsm <c@chrsm.org>"
 
-RUN pacman -Syu --noconfirm vlc qt4 qtcurve-qt4 cantarell-fonts
-RUN useradd -m -g users c
-COPY pulse-client.conf /etc/pulse/client.conf
+RUN sudo pacman -Syu --noconfirm vlc qt4 qtcurve-qt4
 
 ENV QT_X11_NO_MITSHM 1 
 

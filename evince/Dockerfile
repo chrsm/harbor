@@ -1,8 +1,7 @@
-FROM pritunl/archlinux:latest
+FROM c/gui_base
 LABEL maintainer="chrsm <c@chrsm.org>"
 
-RUN pacman -Syu --noconfirm evince
-RUN useradd -m -g users c
+RUN sudo pacman -Syu --noconfirm evince
 
 USER c
 CMD [ "/usr/bin/evince" ]

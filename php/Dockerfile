@@ -3,7 +3,7 @@ LABEL maintainer="chrsm <c@chrsm.org>"
 
 RUN pacman -Syu --noconfirm sudo php composer php-sqlite wget git
 
-RUN useradd -m -g users c
+RUN useradd -m c
 
 RUN sudo -u c bash -c 'composer g require psy/psysh:@stable ; \
 	echo "export PATH=$PATH:/home/c/.composer/vendor/bin" >> /home/c/.bash_profile ; \
