@@ -20,9 +20,7 @@ docker_run(){
 	SOUND_OPTS=""
 
 	DEFAULT_OPTS="--hostname=zzz \
-		--net=host \
-		-v /etc/hosts:/etc/hosts:ro \
-		-v /etc/localtime:/etc/localtime:ro"
+		--net=host"
 
 	# $1 = desired options (GFX, X, SOUND)
 	# $2 = image to run a container from
@@ -140,13 +138,11 @@ docker_tig(){
 
 	if [[ -z "$@" ]]; then
 		docker run -it --rm \
-			-v /etc/localtime:/etc/localtime \
 			-v $GITROOT:/opt/host \
 			-w /opt/host$DIR \
 			c/tig
 	else
 		docker run -it --rm \
-			-v /etc/localtime:/etc/localtime \
 			-v $GITROOT:/opt/host \
 			-w /opt/host$DIR \
 			c/tig tig $@
@@ -156,7 +152,6 @@ docker_tig(){
 docker_php(){
 	docker run -it \
 		--rm \
-		-v /etc/localtime:/etc/localtime \
 		-v $(pwd):/opt/host \
 		-w /opt/host \
 		c/php \
@@ -166,7 +161,6 @@ docker_php(){
 docker_prepl(){
 	docker run -it \
 		--rm \
-		-v /etc/localtime:/etc/localtime \
 		-v $HOME/.config/psysh:$HOME/.config/psysh \
 		-v $(pwd):/opt/host \
 		-w /opt/host \
