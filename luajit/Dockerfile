@@ -1,4 +1,4 @@
-FROM pritunl/archlinux:latest
+FROM archlinux/base
 LABEL maintainer="chrsm <c@chrsm.org>"
 
 RUN pacman -Syu --noconfirm luajit luarocks5.1

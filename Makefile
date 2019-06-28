@@ -5,7 +5,7 @@ CONTAINERS := $(patsubst %/,%, $(dir $(wildcard */Dockerfile)))
 all: docker_build
 
 pull_base:
-	@docker pull pritunl/archlinux:latest
+	@docker pull archlinux/base
 
 dockerfile_%:
 	@echo "Building c/$*"

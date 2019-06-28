@@ -1,4 +1,4 @@
-FROM pritunl/archlinux:latest
+FROM archlinux/base
 
 RUN pacman -Syu --noconfirm sudo cmake freetype2 fontconfig pkg-config make xclip git mesa libxi libxcursor ttf-fira-mono
 
