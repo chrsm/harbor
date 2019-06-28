@@ -165,7 +165,7 @@ docker_prepl(){
 		-v $(pwd):/opt/host \
 		-w /opt/host \
 		c/php \
-		$HOME/.composer/vendor/bin/psysh
+		/home/c/.composer/vendor/bin/psysh
 }
 
 docker_firefox(){
