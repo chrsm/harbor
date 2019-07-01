@@ -1,4 +1,4 @@
-FROM c/yaourt
+FROM images.bits.chrsm.org/yaourt
 LABEL maintainer="chrsm <c@chrsm.org>"
 
 RUN yaourt -Syu --noconfirm --aur slack-desktop cantarell-fonts

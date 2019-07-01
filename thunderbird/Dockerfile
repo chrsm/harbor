@@ -1,4 +1,4 @@
-FROM c/gui_base
+FROM images.bits.chrsm.org/gui
 LABEL maintainer="chrsm <c@chrsm.org>"
 
 RUN sudo pacman -Syu --noconfirm thunderbird

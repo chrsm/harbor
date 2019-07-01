@@ -1,4 +1,4 @@
-FROM c/php
+FROM images.bits.chrsm.org/php
 LABEL maintainer="chrsm <c@chrsm.org>"
 
 RUN echo "export PATH=\$PATH:/home/c/.arc/arcanist/bin" >> /home/c/.bashrc ; \
