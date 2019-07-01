@@ -13,6 +13,4 @@ RUN sudo -u c sh -c \
 # RUN THIS AFTER ANY OTHER DOCKER FILE!
 # RUN usermod -G '' c ; rm /etc/sudoers.d/c ; pacman -R --noconfirm sudo
 
-USER c
-
 CMD [ "bash" ]

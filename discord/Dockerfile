@@ -1,4 +1,4 @@
-FROM images.bits.chrsm.org/yaourt
+FROM images.bits.chrsm.org/gui
 LABEL maintainer="chrsm <c@chrsm.org>"
 
 RUN yaourt -Syu --noconfirm --aur ttf-oxygen otf-overpass all-repository-fonts wget libxtst
@@ -7,6 +7,7 @@ RUN cd /tmp ; wget https://aur.archlinux.org/cgit/aur.git/snapshot/libc%2B%2B.ta
 RUN yaourt -Syu --noconfirm --aur discord
 RUN yaourt -Syu --noconfirm libxtst
 
+RUN usermod -G '' c ; rm /etc/sudoers.d/c ; pacman -R --noconfirm sudo
 USER c
 
 CMD [ "/usr/bin/discord" ]

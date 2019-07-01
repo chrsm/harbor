@@ -1,9 +1,7 @@
-FROM archlinux/base
+FROM images.bits.chrsm.org/arch
 LABEL maintainer="chrsm <c@chrsm.org>"
 
 RUN pacman -Syu --noconfirm sudo php composer php-sqlite wget git
-
-RUN useradd -m c
 
 RUN sudo -u c bash -c 'composer g require psy/psysh:@stable ; \
 	echo "export PATH=$PATH:/home/c/.composer/vendor/bin" >> /home/c/.bash_profile ; \
@@ -16,6 +14,7 @@ RUN echo -e "extension=pdo_sqlite.so\nextension=sqlite3.so" > /etc/php/conf.d/00
 RUN pacman -Syu --noconfirm nano
 RUN pacman -Syu --noconfirm openssh
 
+RUN usermod -G '' c ; rm /etc/sudoers.d/c ; pacman -R --noconfirm sudo
 USER c
 
 CMD [ "/usr/bin/php" ]
