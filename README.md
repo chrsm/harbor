@@ -15,9 +15,16 @@ All images are based on `archlinux/base` (previously `pritunl/archlinux`).
 Some GUI apps are contained as well, but HW acceleration and sound do not work
 outside of Docker running natively on Linux.
 
+building
+========
+
+My image server is private, but the idea is that `build.sh` is deployed to a
+server responsible for updating a local copy of the repo which then builds
+and pushes them to the image server. I can then pull these down without
+having to go through building locally and pushing them up.
+
 
 TODOs
 =====
 
 - Research hw accel on mac - possible at all?
-- Update base - creating `$USER` in too many places.
