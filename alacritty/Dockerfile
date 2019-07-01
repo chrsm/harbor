@@ -1,8 +1,6 @@
 FROM images.bits.chrsm.org/gui
 
-RUN pacman -Syu --noconfirm sudo cmake freetype2 fontconfig pkg-config make xclip git mesa libxi libxcursor ttf-fira-mono
-
-RUN pacman -Syu --noconfirm base-devel
+RUN pacman -Syu --noconfirm sudo cmake freetype2 fontconfig pkg-config make xclip git mesa libxi libxcursor
 
 RUN sudo -u c bash -c "curl https://sh.rustup.rs -sSf | sh -s -- -y ; \
 	/home/c/.cargo/bin/rustup override set stable ; /home/c/.cargo/bin/rustup update stable; \
